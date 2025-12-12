@@ -4,531 +4,511 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Micropigmentação de Barba em Curitiba | Studio MK</title>
-  <meta name="description" content="Micropigmentação de barba em Curitiba-PR. Preenchimento de falhas com resultado natural e discreto. Agende pelo WhatsApp." />
+  <meta name="description" content="Preenchimento de falhas na barba com micropigmentação. Natural, discreto e com resultado imediato. Atendimento em Curitiba-PR. Agende pelo WhatsApp." />
 
-  <!-- Fontes (joviais + autoridade) -->
+  <!-- Fonte mais jovial + autoridade -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#0b0f14;
-      --card:#101826;
-      --stroke:rgba(255,255,255,.08);
-      --text:#eaf0f7;
-      --muted:rgba(234,240,247,.75);
-      --accent:#34d399; /* verde */
-      --accent2:#60a5fa; /* azul */
-      --shadow: 0 18px 55px rgba(0,0,0,.45);
-      --radius: 22px;
-      --radius2: 16px;
-      --max: 1040px;
-
-      --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      --font-title: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      --bg:#070b12;
+      --card:#0e1626;
+      --muted:rgba(255,255,255,.72);
+      --text:#eaf1ff;
+      --line:rgba(255,255,255,.08);
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --accent:#35d08c;
+      --accent2:#2f7bff;
+      --radius:18px;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
     body{
       margin:0;
-      font-family: var(--font-body);
+      font-family:"Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 700px at 20% 10%, rgba(47,123,255,.18), transparent 55%),
+                  radial-gradient(1200px 700px at 85% 25%, rgba(53,208,140,.14), transparent 60%),
+                  var(--bg);
       color:var(--text);
-      background:
-        radial-gradient(900px 520px at 12% 10%, rgba(96,165,250,.25), transparent 55%),
-        radial-gradient(900px 520px at 88% 20%, rgba(52,211,153,.20), transparent 55%),
-        radial-gradient(1200px 700px at 50% 100%, rgba(255,255,255,.06), transparent 60%),
-        var(--bg);
+      line-height:1.45;
     }
 
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 56px}
+    a{ color:inherit; text-decoration:none; }
 
+    .container{
+      width:min(1100px, 92vw);
+      margin:0 auto;
+      padding:20px 0 70px;
+    }
+
+    /* Top bar */
     .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px; padding:10px 0 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:10px 0 18px;
     }
-    .chips{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
-    .chip{
-      display:inline-flex; align-items:center; gap:8px;
-      border:1px solid var(--stroke);
-      background:rgba(255,255,255,.04);
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
       padding:8px 12px;
+      border:1px solid var(--line);
       border-radius:999px;
-      font-weight:600;
+      background:rgba(255,255,255,.04);
+      font-weight:700;
+      font-size:.85rem;
       letter-spacing:.2px;
-      font-size:13px;
     }
-    .chip.brand{background:rgba(96,165,250,.18); border-color:rgba(96,165,250,.35)}
-    .chip.loc{background:rgba(52,211,153,.16); border-color:rgba(52,211,153,.35)}
+
+    .pill small{
+      opacity:.85;
+      font-weight:600;
+    }
 
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       gap:10px;
       padding:12px 16px;
       border-radius:999px;
-      border:1px solid rgba(52,211,153,.45);
-      background:linear-gradient(180deg, rgba(52,211,153,.22), rgba(52,211,153,.12));
-      color:var(--text);
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
       font-weight:800;
-      font-family: var(--font-title);
-      letter-spacing:.2px;
-      box-shadow: 0 10px 25px rgba(52,211,153,.10);
       cursor:pointer;
-      transition: transform .12s ease, filter .12s ease;
+      transition:.15s ease;
       white-space:nowrap;
     }
-    .btn:hover{transform:translateY(-1px); filter:brightness(1.03)}
-    .btn.secondary{
-      border-color:rgba(96,165,250,.45);
-      background:linear-gradient(180deg, rgba(96,165,250,.22), rgba(96,165,250,.12));
-      box-shadow: 0 10px 25px rgba(96,165,250,.10);
+    .btn:hover{ transform: translateY(-1px); background:rgba(255,255,255,.06); }
+
+    .btn.primary{
+      border:none;
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
+      box-shadow: 0 14px 35px rgba(47,123,255,.22);
+      color:#061018;
     }
 
+    .btn.ghost{
+      background: transparent;
+      border:1px solid rgba(255,255,255,.16);
+    }
+
+    /* Hero */
     .hero{
-      border:1px solid var(--stroke);
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border-radius:var(--radius);
-      padding:26px 22px;
-      box-shadow:var(--shadow);
-      overflow:hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:26px;
       position:relative;
+      overflow:hidden;
     }
-    .hero::after{
+
+    .hero:before{
       content:"";
-      position:absolute; inset:-2px;
+      position:absolute;
+      inset:-2px;
       background:
-        radial-gradient(500px 220px at 15% 25%, rgba(96,165,250,.18), transparent 60%),
-        radial-gradient(500px 220px at 80% 25%, rgba(52,211,153,.14), transparent 60%);
+        radial-gradient(600px 260px at 20% 20%, rgba(53,208,140,.16), transparent 60%),
+        radial-gradient(600px 260px at 80% 10%, rgba(47,123,255,.18), transparent 60%);
       pointer-events:none;
-      opacity:.9;
-    }
-    .hero > *{position:relative; z-index:1}
-
-    .kicker{
-      font-weight:700;
-      color:rgba(234,240,247,.88);
-      letter-spacing:.2px;
-      font-size:14px;
-      margin:0 0 10px;
     }
 
-    h1{
-      margin:0 0 10px;
-      font-family: var(--font-title);
-      font-size: clamp(26px, 3.2vw, 40px);
-      line-height:1.05;
-      letter-spacing:-0.6px;
+    .hero-inner{
+      position:relative;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
     }
+
+    .hero h1{
+      margin:0 0 10px;
+      font-size: clamp(1.7rem, 2.6vw, 2.7rem);
+      line-height:1.08;
+      letter-spacing:-.8px;
+    }
+
+    .hero p{
+      margin:0 0 16px;
+      color: var(--muted);
+      max-width: 58ch;
+      font-weight:500;
+    }
+
+    .hero .kicker{
+      font-weight:800;
+      color: rgba(255,255,255,.85);
+      font-size:.95rem;
+      margin-bottom:8px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
+
+    .hero-box{
+      background:rgba(0,0,0,.20);
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:12px;
+    }
+
+    .badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .badge{
+      font-size:.82rem;
+      font-weight:800;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+      color:rgba(255,255,255,.86);
+    }
+
+    /* Sections */
+    .section{
+      margin-top:22px;
+      padding:22px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 16px 40px rgba(0,0,0,.30);
+    }
+
+    .section-title{
+      margin:0 0 10px;
+      font-size:1.35rem;
+      letter-spacing:-.3px;
+    }
+
     .sub{
       margin:0 0 18px;
       color:var(--muted);
-      font-size:15.5px;
-      line-height:1.55;
-      max-width: 64ch;
+      font-weight:500;
     }
-    .heroActions{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
 
-    .grid{
+    .grid-2{
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:16px;
-      margin-top:16px;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      align-items:stretch;
     }
 
     .card{
-      border:1px solid var(--stroke);
-      background:rgba(16,24,38,.72);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow:var(--shadow);
-    }
-    .title{
-      font-family: var(--font-title);
-      font-weight:800;
-      margin:0 0 8px;
-      letter-spacing:-.2px;
-      font-size:18px;
-    }
-    .p{margin:0; color:var(--muted); line-height:1.6; font-size:14.8px}
-    ul{margin:10px 0 0 18px; color:var(--muted); line-height:1.7}
-    li{margin:6px 0}
-
-    .badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
-    .badge{
-      display:inline-flex; align-items:center;
-      border:1px solid var(--stroke);
-      background:rgba(255,255,255,.03);
-      padding:8px 10px;
-      border-radius:999px;
-      font-size:12.5px;
-      color:rgba(234,240,247,.86);
-      font-weight:600;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
     }
 
-    .section{
-      margin-top:18px;
-      border:1px solid var(--stroke);
-      background:rgba(255,255,255,.03);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow:var(--shadow);
+    .list{
+      margin:10px 0 0;
+      padding-left:18px;
+      color:rgba(255,255,255,.78);
     }
 
-    /* RESULTADOS (2 casos) */
-    .proof{
+    /* RESULTADOS */
+    .resultados-grid{
       display:grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap:12px;
-      margin-top:12px;
-    }
-    .case{
-      border:1px solid var(--stroke);
-      border-radius:var(--radius2);
-      background:rgba(0,0,0,.18);
-      overflow:hidden;
-    }
-    .caseHeader{padding:12px 12px 0;}
-    .caseHeader h3{
-      margin:0;
-      font-family: var(--font-title);
-      font-size:14px;
-      letter-spacing:.3px;
-      font-weight:800;
-      color:rgba(234,240,247,.92);
-    }
-    .caseHeader p{
-      margin:6px 0 10px;
-      font-size:12.8px;
-      color:rgba(234,240,247,.70);
-      font-weight:600;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
     }
 
-    /* Desktop (padrão) */
-    .case img{
-      width:100%;
-      height:320px;          /* tamanho desktop */
-      <section class="section resultados" id="resultados">
-  <h2>Resultados reais</h2>
-  <p class="sub">
-    Apenas 2 casos fortes — sem exagero, mais confiança.
-  </p>
-
-  <div class="resultados-grid">
-    
-    <!-- FOTO 1 -->
-    <div class="caso">
-      <h3>CASO 1</h3>
-      <img src="barba-1.jpg" alt="Micropigmentação de barba - antes e depois">
-      <span>Antes / Depois / Cicatrizado</span>
-    </div>
-
-    <!-- FOTO 3 -->
-    <div class="caso">
-      <h3>CASO 2</h3>
-      <img src="barba-3.jpg" alt="Micropigmentação de barba - resultado cicatrizado">
-      <span>Antes / Depois / Cicatrizado</span>
-    </div>
-
-  </div>
-</section>
-
-      display:block;
-      border-top:1px solid var(--stroke);
-    }
-
-    /* Depoimentos mais “WhatsApp real” */
-    .testimonials{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap:12px;
-      margin-top:12px;
-    }
-    .msg{
-      border:1px solid var(--stroke);
-      background:rgba(0,0,0,.16);
-      border-radius:var(--radius2);
+    .caso{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:16px;
       padding:14px;
     }
-    .meta{
-      display:flex;
-      gap:8px;
-      align-items:center;
-      margin-bottom:8px;
-      color:rgba(234,240,247,.78);
-      font-size:12.8px;
-      font-weight:600;
-    }
-    .dot{
-      width:8px; height:8px; border-radius:50%;
-      background: rgba(52,211,153,.8);
-      box-shadow: 0 0 0 3px rgba(52,211,153,.12);
-    }
-    .msg p{
-      margin:0;
-      color:rgba(234,240,247,.82);
-      line-height:1.55;
-      font-size:14.2px;
+
+    .caso h3{
+      margin:0 0 10px;
+      font-size:1rem;
+      letter-spacing:.3px;
     }
 
-    /* CTA sticky */
-    .ctaBar{
-      position:sticky;
-      bottom:14px;
-      z-index:50;
-      margin-top:22px;
-      display:flex;
-      justify-content:center;
-    }
-    .ctaInner{
-      max-width:var(--max);
+    /* IMAGEM SEM CORTE */
+    .caso img{
       width:100%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      padding:12px 14px;
-      border-radius:999px;
-      border:1px solid var(--stroke);
-      background:rgba(16,24,38,.82);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 18px 55px rgba(0,0,0,.45);
+      height:auto;              /* NÃO corta */
+      max-height: 380px;        /* desktop */
+      object-fit: contain;      /* respeita a foto */
+      border-radius:12px;
+      background:#000;          /* fundo elegante */
+      border:1px solid rgba(255,255,255,.06);
+      display:block;
     }
-    .ctaInner small{
-      color:rgba(234,240,247,.72);
+
+    .caso span{
+      display:block;
+      margin-top:10px;
+      font-size:.86rem;
+      opacity:.78;
       font-weight:600;
     }
-    .ctaInner .left{
-      display:flex; flex-direction:column; gap:2px;
-      min-width:0;
-    }
-    .ctaInner .left strong{
-      font-family: var(--font-title);
-      letter-spacing:-.2px;
-      font-weight:900;
-      font-size:13.8px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
+
+    /* Depoimentos estilo conversa */
+    .chat{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top:10px;
     }
 
-    /* ✅ MOBILE */
-    @media (max-width: 920px){
-      .grid{grid-template-columns:1fr}
+    .msg{
+      max-width: 92%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.04);
+      color:rgba(255,255,255,.88);
+      font-weight:550;
     }
-    @media (max-width: 720px){
-      .proof{grid-template-columns:1fr}
-      .testimonials{grid-template-columns:1fr}
-      .case img{height:240px;} /* tamanho mobile */
+
+    .msg.you{
+      align-self:flex-start;
+      border-top-left-radius: 8px;
     }
-    @media (max-width: 520px){
-      .ctaInner small{display:none}
-      .ctaInner{padding:10px 12px}
-      .btn{width:100%}
-      .heroActions{gap:10px}
+
+    .msg.me{
+      align-self:flex-end;
+      background: rgba(47,123,255,.12);
+      border-color: rgba(47,123,255,.22);
+      border-top-right-radius: 8px;
     }
-  /* RESULTADOS */
-.resultados {
-  margin-top: 60px;
-}
 
-.resultados h2 {
-  font-size: 1.8rem;
-  margin-bottom: 8px;
-}
+    .meta{
+      margin-top:6px;
+      font-size:.78rem;
+      opacity:.65;
+      font-weight:600;
+    }
 
-.resultados .sub {
-  opacity: 0.8;
-  margin-bottom: 24px;
-}
+    /* Sticky CTA (mobile) */
+    .sticky{
+      position:fixed;
+      left:0;
+      right:0;
+      bottom:0;
+      background: rgba(7,11,18,.72);
+      backdrop-filter: blur(10px);
+      border-top:1px solid rgba(255,255,255,.08);
+      padding:10px 12px;
+      display:none;
+      z-index:999;
+    }
 
-/* GRID */
-.resultados-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
+    .sticky-inner{
+      width:min(1100px, 94vw);
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      color:rgba(255,255,255,.86);
+      font-weight:800;
+      font-size:.92rem;
+    }
 
-/* CARD */
-.caso {
-  background: #101826;
-  border-radius: 14px;
-  padding: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.25);
-}
+    .small-note{
+      margin-top:10px;
+      font-size:.85rem;
+      color:rgba(255,255,255,.62);
+      font-weight:600;
+    }
 
-.caso h3 {
-  margin-bottom: 10px;
-  font-size: 1rem;
-  letter-spacing: .5px;
-}
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero-inner{ grid-template-columns:1fr; }
+    }
 
-/* IMAGEM — A PARTE MAIS IMPORTANTE */
-.caso img {
-  width: 100%;
-  height: auto;              /* NÃO corta */
-  max-height: 360px;         /* controle desktop */
-  object-fit: contain;       /* respeita a foto */
-  border-radius: 10px;
-  background: #000;          /* fundo elegante */
-}
-
-/* TEXTO */
-.caso span {
-  display: block;
-  margin-top: 8px;
-  font-size: 0.85rem;
-  opacity: 0.75;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .resultados-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .caso img {
-    max-height: 280px;       /* mobile menor */
-  }
-}
-
+    @media (max-width: 768px){
+      .grid-2{ grid-template-columns:1fr; }
+      .resultados-grid{ grid-template-columns:1fr; }
+      .caso img{ max-height: 300px; } /* mobile */
+      .sticky{ display:block; }
+      .topbar .btn.primary{ display:none; } /* CTA fica no sticky */
+    }
+  </style>
 </head>
 
 <body>
-  <div class="wrap">
+  <!-- WhatsApp -->
+  <script>
+    const WHATSAPP_NUMBER = "5541991441198";
+    const WHATSAPP_TEXT = encodeURIComponent("Olá! Quero mais informações sobre micropigmentação de barba (preenchimento de falhas).");
+    const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_TEXT}`;
+  </script>
 
+  <div class="container">
     <div class="topbar">
-      <div class="chips">
-        <span class="chip brand">Studio MK</span>
-        <span class="chip loc">Curitiba-PR</span>
+      <div class="brand">
+        <div class="pill">Studio MK</div>
+        <div class="pill"><small>Curitiba-PR</small></div>
       </div>
-      <a class="btn" href="#whatsapp">Agendar no WhatsApp</a>
+      <a class="btn primary" href="#" onclick="window.location.href=WHATSAPP_LINK; return false;">Agendar no WhatsApp</a>
     </div>
 
-    <section class="hero">
-      <p class="kicker">Micropigmentação de Barba • Natural • Discreta • Resultado imediato</p>
-      <h1>Preencha falhas na barba e tenha um visual mais <span style="color:var(--accent)">marcante</span> — sem parecer artificial.</h1>
-      <p class="sub">
-        Técnica feita para imitar fios reais, respeitando seu rosto e tom de pele.
-        Ideal para falhas, barba rala e correções. Atendimento em <b>Curitiba-PR</b>.
-      </p>
-      <div class="heroActions">
-        <a class="btn" href="#whatsapp">Quero ver valores e agenda</a>
-        <a class="btn secondary" href="#resultados">Ver resultados reais</a>
-      </div>
-    </section>
+    <section class="hero" id="topo">
+      <div class="hero-inner">
+        <div>
+          <div class="kicker">Micropigmentação de Barba • Natural • Discreta • Resultado imediato</div>
+          <h1>Preencha falhas na barba e tenha um visual mais marcante — <span style="color:rgba(53,208,140,.95)">sem parecer artificial</span>.</h1>
+          <p>
+            Técnica feita para <b>imitar fios reais</b>, respeitando seu rosto e tom de pele.
+            Ideal para falhas, barba rala e correções. Atendimento em <b>Curitiba-PR</b>.
+          </p>
 
-    <div class="grid">
-      <section class="card">
-        <h2 class="title">Como funciona</h2>
-        <p class="p">
-          Usamos um equipamento que deposita pigmento próprio para a pele, criando pontos que simulam fios e densidade.
-          O desenho é feito antes para garantir harmonia e naturalidade.
-        </p>
-        <div class="badges">
-          <span class="badge">Discreto</span>
-          <span class="badge">Rápido</span>
-          <span class="badge">Resultado imediato</span>
-          <span class="badge">Duração média 6–18 meses</span>
-        </div>
-      </section>
-
-      <section class="card">
-        <h2 class="title">Dúvidas comuns</h2>
-        <ul>
-          <li><b>É tatuagem?</b> Não. É mais superficial e com técnica específica para o rosto.</li>
-          <li><b>Dói?</b> Em geral é bem tranquilo — a maioria descreve como leve incômodo.</li>
-          <li><b>Vai ficar artificial?</b> A proposta é naturalidade (como se a barba já fosse sua).</li>
-          <li><b>Posso remover?</b> Caso um dia queira, existem opções de remoção a laser.</li>
-        </ul>
-      </section>
-    </div>
-
-    <!-- RESULTADOS (somente 2 casos) -->
-    <section class="section" id="resultados">
-      <h2 class="title">Resultados reais</h2>
-      <p class="p">2 casos fortes, sem exagero — mais impacto e mais confiança.</p>
-
-      <div class="proof">
-        <div class="case">
-          <div class="caseHeader">
-            <h3>CASO 1</h3>
-            <p>Antes / Depois / Cicatrizado</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#" onclick="window.location.href=WHATSAPP_LINK; return false;">Quero ver valores e agenda</a>
+            <a class="btn ghost" href="#resultados">Ver resultados reais</a>
           </div>
-          <img src="barba-1.jpg" alt="Micropigmentação de barba - caso 1">
-        </div>
 
-        <div class="case">
-          <div class="caseHeader">
-            <h3>CASO 2</h3>
-            <p>Antes / Depois / Cicatrizado</p>
+          <div class="small-note">
+            *Se quiser, você me manda uma foto quando estiver tranquilo — mas dá pra te orientar primeiro sem foto também.
           </div>
-          <img src="barba-3.jpg" alt="Micropigmentação de barba - caso 2">
+        </div>
+
+        <div class="hero-box">
+          <div>
+            <div class="section-title" style="margin:0 0 8px;">Como funciona</div>
+            <div style="color:var(--muted); font-weight:550;">
+              Depositamos pigmento próprio para a pele, criando pontos que simulam fios e densidade.
+              O desenho é feito antes para garantir harmonia e naturalidade.
+            </div>
+            <div class="badges" style="margin-top:12px;">
+              <div class="badge">Discreto</div>
+              <div class="badge">Rápido</div>
+              <div class="badge">Resultado imediato</div>
+              <div class="badge">Duração média 6–18 meses</div>
+            </div>
+          </div>
+
+          <a class="btn" href="#" onclick="window.location.href=WHATSAPP_LINK; return false;">Agendar no WhatsApp</a>
         </div>
       </div>
     </section>
 
-    <!-- DEPOIMENTOS (mais reais) -->
-    <section class="section" id="depoimentos" style="margin-top:16px;">
-      <h2 class="title">O que os clientes comentam</h2>
-      <p class="p">Mensagens que parecem conversa de verdade (sem “texto de propaganda”).</p>
-
-      <div class="testimonials">
-        <div class="msg">
-          <div class="meta"><span class="dot"></span><span>Mensagem recebida</span></div>
-          <p>“Cara… ficou MUITO natural. Era exatamente meu medo parecer marcado. Curti demais.”</p>
+    <section class="section" id="duvidas">
+      <div class="grid-2">
+        <div class="card">
+          <h2 class="section-title">Dúvidas comuns</h2>
+          <ul class="list">
+            <li><b>É tatuagem?</b> Não. É mais superficial e feito com técnica específica para o rosto.</li>
+            <li><b>Dói?</b> Em geral é bem tranquilo — a maioria descreve como leve incômodo.</li>
+            <li><b>Fica artificial?</b> A ideia é parecer natural, como se a barba já fosse sua.</li>
+            <li><b>Se eu quiser remover?</b> Dá para remover com laser (caso você queira no futuro).</li>
+          </ul>
         </div>
 
-        <div class="msg">
-          <div class="meta"><span class="dot"></span><span>Mensagem recebida</span></div>
-          <p>“Minha falha era bem aparente. No espelho já dá outra presença. Obrigado pela paciência 🙏”</p>
-        </div>
-
-        <div class="msg">
-          <div class="meta"><span class="dot"></span><span>Mensagem recebida</span></div>
-          <p>“Achei que ia doer mais… foi bem de boa. E o resultado na hora já anima.”</p>
-        </div>
-
-        <div class="msg">
-          <div class="meta"><span class="dot"></span><span>Mensagem recebida</span></div>
-          <p>“Ninguém percebeu. Só falaram que minha barba ‘melhorou’ kkk. Era isso que eu queria.”</p>
+        <div class="card" id="whatsapp">
+          <h2 class="section-title">Atendimento</h2>
+          <p class="sub" style="margin-bottom:10px;">
+            Curitiba-PR • Agendamento direto no WhatsApp
+          </p>
+          <a class="btn primary" href="#" onclick="window.location.href=WHATSAPP_LINK; return false;">Chamar no WhatsApp agora</a>
+          <div class="small-note">
+            WhatsApp: (41) 99144-1198
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- WHATSAPP -->
-    <section class="section" id="whatsapp" style="margin-top:16px;">
-      <h2 class="title">Agendamento e informações</h2>
-      <p class="p">
-        Clique no botão abaixo e me diga rapidinho:
-        <b>onde tem falhas</b> e <b>quando você quer fazer</b>.
-      </p>
+    <!-- RESULTADOS (somente 2 fotos: barba-1 e barba-3) -->
+    <section class="section resultados" id="resultados">
+      <h2 class="section-title">Resultados reais</h2>
+      <p class="sub">Apenas 2 casos fortes — sem exagero, mais confiança.</p>
 
-      <div style="height:14px"></div>
+      <div class="resultados-grid">
+        <div class="caso">
+          <h3>CASO 1</h3>
+          <img src="barba-1.jpg" alt="Micropigmentação de barba - antes e depois">
+          <span>Antes / Depois / Cicatrizado</span>
+        </div>
 
-      <a class="btn" style="width:100%; justify-content:center;"
-         href="https://wa.me/5541991441198?text=Ol%C3%A1%2C%20tenho%20interesse%20na%20micropigmenta%C3%A7%C3%A3o%20de%20barba.%20Pode%20me%20passar%20valores%20e%20agenda%3F">
-         Agendar no WhatsApp
-      </a>
+        <div class="caso">
+          <h3>CASO 2</h3>
+          <img src="barba-3.jpg" alt="Micropigmentação de barba - resultado cicatrizado">
+          <span>Antes / Depois / Cicatrizado</span>
+        </div>
+      </div>
 
-      <p class="p" style="margin-top:12px; font-size:13.5px;">
-        📍 Atendimento em <b>Curitiba-PR</b> • Studio MK
-      </p>
+      <div class="small-note">Dica: poucos casos bem escolhidos costumam converter melhor do que “vários exemplos”.</div>
     </section>
 
-    <div class="ctaBar">
-      <div class="ctaInner">
-        <div class="left">
-          <strong>Micropigmentação de Barba • Resultado natural</strong>
-          <small>Curitiba-PR • Clique e fale no WhatsApp</small>
+    <!-- DEPOIMENTOS (mais real, estilo WhatsApp) -->
+    <section class="section" id="depoimentos">
+      <h2 class="section-title">O que os clientes comentam</h2>
+      <p class="sub">Mensagens curtas, do jeito que a galera fala (sem “texto de propaganda”).</p>
+
+      <div class="card">
+        <div class="chat">
+          <div class="msg you">
+            Cara, ficou bem natural mesmo… eu tava com receio de ficar marcado.
+            <div class="meta">Cliente • 25–34</div>
+          </div>
+
+          <div class="msg me">
+            Pode ficar tranquilo. A gente faz bem sutil e ajusta ao seu tom de pele.
+            <div class="meta">Studio MK</div>
+          </div>
+
+          <div class="msg you">
+            De perto dá pra ver que é “procedimento”?
+            <div class="meta">Cliente</div>
+          </div>
+
+          <div class="msg me">
+            Não. O objetivo é parecer densidade natural. Se quiser, te mando vídeo em luz natural.
+            <div class="meta">Studio MK</div>
+          </div>
+
+          <div class="msg you">
+            Fechou. Já quero marcar pra essa semana se tiver horário.
+            <div class="meta">Cliente</div>
+          </div>
         </div>
-        <a class="btn" href="https://wa.me/5541991441198?text=Ol%C3%A1%2C%20tenho%20interesse%20na%20micropigmenta%C3%A7%C3%A3o%20de%20barba.%20Pode%20me%20passar%20valores%20e%20agenda%3F">
-          Agendar no WhatsApp
-        </a>
+
+        <div style="margin-top:14px;">
+          <a class="btn primary" href="#" onclick="window.location.href=WHATSAPP_LINK; return false;">Agendar no WhatsApp</a>
+        </div>
       </div>
+    </section>
+
+  </div>
+
+  <!-- Sticky CTA -->
+  <div class="sticky">
+    <div class="sticky-inner">
+      <div>Micropigmentação de Barba • Curitiba-PR</div>
+      <a class="btn primary" href="#" onclick="window.location.href=WHATSAPP_LINK; return false;">Agendar</a>
     </div>
-
   </div>
 </body>
 </html>
+
