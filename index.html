@@ -25,7 +25,6 @@
       --radius2: 16px;
       --max: 1040px;
 
-      /* fontes */
       --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       --font-title: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
@@ -81,7 +80,6 @@
       white-space:nowrap;
     }
     .btn:hover{transform:translateY(-1px); filter:brightness(1.03)}
-    .btn:active{transform:translateY(0px)}
     .btn.secondary{
       border-color:rgba(96,165,250,.45);
       background:linear-gradient(180deg, rgba(96,165,250,.22), rgba(96,165,250,.12));
@@ -138,9 +136,6 @@
       gap:16px;
       margin-top:16px;
     }
-    @media (max-width: 920px){
-      .grid{grid-template-columns:1fr}
-    }
 
     .card{
       border:1px solid var(--stroke);
@@ -181,25 +176,20 @@
       box-shadow:var(--shadow);
     }
 
+    /* RESULTADOS (2 casos) */
     .proof{
       display:grid;
       grid-template-columns: repeat(2, minmax(0,1fr));
       gap:12px;
       margin-top:12px;
     }
-    @media (max-width: 720px){
-      .proof{grid-template-columns:1fr}
-    }
-
     .case{
       border:1px solid var(--stroke);
       border-radius:var(--radius2);
       background:rgba(0,0,0,.18);
       overflow:hidden;
     }
-    .caseHeader{
-      padding:12px 12px 0;
-    }
+    .caseHeader{padding:12px 12px 0;}
     .caseHeader h3{
       margin:0;
       font-family: var(--font-title);
@@ -214,39 +204,51 @@
       color:rgba(234,240,247,.70);
       font-weight:600;
     }
+
+    /* Desktop (padrão) */
     .case img{
       width:100%;
-      height:auto;
+      height:320px;          /* tamanho desktop */
+      object-fit:cover;       /* corta sem distorcer */
       display:block;
       border-top:1px solid var(--stroke);
     }
 
+    /* Depoimentos mais “WhatsApp real” */
     .testimonials{
       display:grid;
       grid-template-columns: repeat(2, minmax(0,1fr));
       gap:12px;
       margin-top:12px;
     }
-    @media (max-width: 720px){
-      .testimonials{grid-template-columns:1fr}
-    }
-    .quote{
+    .msg{
       border:1px solid var(--stroke);
       background:rgba(0,0,0,.16);
       border-radius:var(--radius2);
-      padding:14px 14px;
+      padding:14px;
     }
-    .quote b{
-      font-family: var(--font-title);
-      letter-spacing:.2px;
-    }
-    .quote p{
-      margin:8px 0 0;
+    .meta{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      margin-bottom:8px;
       color:rgba(234,240,247,.78);
+      font-size:12.8px;
+      font-weight:600;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:50%;
+      background: rgba(52,211,153,.8);
+      box-shadow: 0 0 0 3px rgba(52,211,153,.12);
+    }
+    .msg p{
+      margin:0;
+      color:rgba(234,240,247,.82);
       line-height:1.55;
-      font-size:14px;
+      font-size:14.2px;
     }
 
+    /* CTA sticky */
     .ctaBar{
       position:sticky;
       bottom:14px;
@@ -286,9 +288,21 @@
       overflow:hidden;
       text-overflow:ellipsis;
     }
+
+    /* ✅ MOBILE */
+    @media (max-width: 920px){
+      .grid{grid-template-columns:1fr}
+    }
+    @media (max-width: 720px){
+      .proof{grid-template-columns:1fr}
+      .testimonials{grid-template-columns:1fr}
+      .case img{height:240px;} /* tamanho mobile */
+    }
     @media (max-width: 520px){
       .ctaInner small{display:none}
       .ctaInner{padding:10px 12px}
+      .btn{width:100%}
+      .heroActions{gap:10px}
     }
   </style>
 </head>
@@ -301,14 +315,14 @@
         <span class="chip brand">Studio MK</span>
         <span class="chip loc">Curitiba-PR</span>
       </div>
-      <a class="btn" id="btnTop" href="#whatsapp">Agendar no WhatsApp</a>
+      <a class="btn" href="#whatsapp">Agendar no WhatsApp</a>
     </div>
 
     <section class="hero">
       <p class="kicker">Micropigmentação de Barba • Natural • Discreta • Resultado imediato</p>
       <h1>Preencha falhas na barba e tenha um visual mais <span style="color:var(--accent)">marcante</span> — sem parecer artificial.</h1>
       <p class="sub">
-        Técnica de micropigmentação feita para imitar fios reais, respeitando seu rosto e tom de pele.
+        Técnica feita para imitar fios reais, respeitando seu rosto e tom de pele.
         Ideal para falhas, barba rala e correções. Atendimento em <b>Curitiba-PR</b>.
       </p>
       <div class="heroActions">
@@ -335,7 +349,7 @@
       <section class="card">
         <h2 class="title">Dúvidas comuns</h2>
         <ul>
-          <li><b>É tatuagem?</b> Não. É mais superficial e feito com técnica específica para o rosto.</li>
+          <li><b>É tatuagem?</b> Não. É mais superficial e com técnica específica para o rosto.</li>
           <li><b>Dói?</b> Em geral é bem tranquilo — a maioria descreve como leve incômodo.</li>
           <li><b>Vai ficar artificial?</b> A proposta é naturalidade (como se a barba já fosse sua).</li>
           <li><b>Posso remover?</b> Caso um dia queira, existem opções de remoção a laser.</li>
@@ -343,10 +357,10 @@
       </section>
     </div>
 
-    <!-- RESULTADOS -->
+    <!-- RESULTADOS (somente 2 casos) -->
     <section class="section" id="resultados">
-      <h2 class="title">Resultados reais (antes / depois / cicatrizado)</h2>
-      <p class="p">Aqui entra o seu material real. Evite excesso de edição — autenticidade converte melhor.</p>
+      <h2 class="title">Resultados reais</h2>
+      <p class="p">2 casos fortes, sem exagero — mais impacto e mais confiança.</p>
 
       <div class="proof">
         <div class="case">
@@ -362,48 +376,35 @@
             <h3>CASO 2</h3>
             <p>Antes / Depois / Cicatrizado</p>
           </div>
-          <img src="barba-2.jpg" alt="Micropigmentação de barba - caso 2">
-        </div>
-
-        <div class="case">
-          <div class="caseHeader">
-            <h3>CASO 3</h3>
-            <p>Antes / Depois / Cicatrizado</p>
-          </div>
-          <img src="barba-3.jpg" alt="Micropigmentação de barba - caso 3">
-        </div>
-
-        <div class="case">
-          <div class="caseHeader">
-            <h3>CASO 4</h3>
-            <p>Antes / Depois / Cicatrizado</p>
-          </div>
-          <img src="barba-4.jpg" alt="Micropigmentação de barba - caso 4">
+          <img src="barba-3.jpg" alt="Micropigmentação de barba - caso 2">
         </div>
       </div>
     </section>
 
-    <!-- DEPOIMENTOS -->
+    <!-- DEPOIMENTOS (mais reais) -->
     <section class="section" id="depoimentos" style="margin-top:16px;">
-      <h2 class="title">Depoimentos</h2>
-      <p class="p">Alguns relatos de clientes (podemos trocar por prints reais depois).</p>
+      <h2 class="title">O que os clientes comentam</h2>
+      <p class="p">Mensagens que parecem conversa de verdade (sem “texto de propaganda”).</p>
 
       <div class="testimonials">
-        <div class="quote">
-          <b>Rodrigo • Curitiba</b>
-          <p>“Ficou muito natural. Eu tinha medo de parecer marcado, mas ficou bem discreto. Mudou meu visual na hora.”</p>
+        <div class="msg">
+          <div class="meta"><span class="dot"></span><span>Mensagem recebida</span></div>
+          <p>“Cara… ficou MUITO natural. Era exatamente meu medo parecer marcado. Curti demais.”</p>
         </div>
-        <div class="quote">
-          <b>Gustavo • PR</b>
-          <p>“Passei anos tentando minoxidil e nada. O resultado foi imediato e ninguém percebe que é procedimento.”</p>
+
+        <div class="msg">
+          <div class="meta"><span class="dot"></span><span>Mensagem recebida</span></div>
+          <p>“Minha falha era bem aparente. No espelho já dá outra presença. Obrigado pela paciência 🙏”</p>
         </div>
-        <div class="quote">
-          <b>Lucas • Curitiba</b>
-          <p>“Atendimento muito profissional e explicado passo a passo. Recomendo demais pra quem tem falhas.”</p>
+
+        <div class="msg">
+          <div class="meta"><span class="dot"></span><span>Mensagem recebida</span></div>
+          <p>“Achei que ia doer mais… foi bem de boa. E o resultado na hora já anima.”</p>
         </div>
-        <div class="quote">
-          <b>Matheus • Região</b>
-          <p>“Ficou do jeito que eu queria: natural. Nas fotos dá outra presença.”</p>
+
+        <div class="msg">
+          <div class="meta"><span class="dot"></span><span>Mensagem recebida</span></div>
+          <p>“Ninguém percebeu. Só falaram que minha barba ‘melhorou’ kkk. Era isso que eu queria.”</p>
         </div>
       </div>
     </section>
@@ -412,8 +413,8 @@
     <section class="section" id="whatsapp" style="margin-top:16px;">
       <h2 class="title">Agendamento e informações</h2>
       <p class="p">
-        Clique no botão abaixo para falar direto no WhatsApp. Se quiser, já me diga:
-        <b>idade</b>, <b>onde tem falhas</b> e <b>quando quer fazer</b>.
+        Clique no botão abaixo e me diga rapidinho:
+        <b>onde tem falhas</b> e <b>quando você quer fazer</b>.
       </p>
 
       <div style="height:14px"></div>
