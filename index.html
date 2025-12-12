@@ -209,7 +209,31 @@
     .case img{
       width:100%;
       height:320px;          /* tamanho desktop */
-      object-fit:cover;       /* corta sem distorcer */
+      <section class="section resultados" id="resultados">
+  <h2>Resultados reais</h2>
+  <p class="sub">
+    Apenas 2 casos fortes — sem exagero, mais confiança.
+  </p>
+
+  <div class="resultados-grid">
+    
+    <!-- FOTO 1 -->
+    <div class="caso">
+      <h3>CASO 1</h3>
+      <img src="barba-1.jpg" alt="Micropigmentação de barba - antes e depois">
+      <span>Antes / Depois / Cicatrizado</span>
+    </div>
+
+    <!-- FOTO 3 -->
+    <div class="caso">
+      <h3>CASO 2</h3>
+      <img src="barba-3.jpg" alt="Micropigmentação de barba - resultado cicatrizado">
+      <span>Antes / Depois / Cicatrizado</span>
+    </div>
+
+  </div>
+</section>
+
       display:block;
       border-top:1px solid var(--stroke);
     }
@@ -304,7 +328,71 @@
       .btn{width:100%}
       .heroActions{gap:10px}
     }
-  </style>
+  /* RESULTADOS */
+.resultados {
+  margin-top: 60px;
+}
+
+.resultados h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.resultados .sub {
+  opacity: 0.8;
+  margin-bottom: 24px;
+}
+
+/* GRID */
+.resultados-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* CARD */
+.caso {
+  background: #101826;
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+.caso h3 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  letter-spacing: .5px;
+}
+
+/* IMAGEM — A PARTE MAIS IMPORTANTE */
+.caso img {
+  width: 100%;
+  height: auto;              /* NÃO corta */
+  max-height: 360px;         /* controle desktop */
+  object-fit: contain;       /* respeita a foto */
+  border-radius: 10px;
+  background: #000;          /* fundo elegante */
+}
+
+/* TEXTO */
+.caso span {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .resultados-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .caso img {
+    max-height: 280px;       /* mobile menor */
+  }
+}
+
 </head>
 
 <body>
